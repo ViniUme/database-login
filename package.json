@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "mongodb": "^4.5.0",
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "reactstrap": "^9.0.2"
   },
   "devDependencies": {
     "@types/mongodb": "^4.0.7",
