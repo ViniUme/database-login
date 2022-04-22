@@ -13,3 +13,13 @@
     align-items: center;
     background-color: #ffffff;
 }
+
+.section_buttons{
+    display: flex;
+    justify-content: center;
+
+    .button{
+        color: black;
+        margin: 15px;
+    }
+}
