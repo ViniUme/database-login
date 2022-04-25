@@ -1,6 +1,6 @@
 .container{
     width: 30%;
-    height: min-content;
+    height: 400px;
     margin: auto;
     position: absolute;
     top: -10%;
@@ -14,21 +14,17 @@
     background-color: #ffffff;
 
     .form{
+        height: 400px;
         display: flex;
         flex-direction: column;
-        margin: 10px;
+        justify-content: center;
 
-        .email, .password{
+        .name, .email, .age, .phone, .password, .confirm_password{
             margin: 10px;
         }
     }
 
-    .section_buttons{
-        display: flex;
-        justify-content: center;
-    
-        .login, .register{
-            margin: 0 10px;
-        }
+    .button{
+        margin: 10px;
     }
 }

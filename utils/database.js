@@ -9,6 +9,8 @@ const client = new MongoClient(url, {
 const dbName = 'USERS';
 
 export default async function Connect(){
+    
+    //if(!client.)
     await client.connect();
 
     const db = client.db(dbName);
