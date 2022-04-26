@@ -10,10 +10,8 @@ const dbName = 'USERS';
 
 export default async function Connect(){
     
-    //if(!client.)
     await client.connect();
+    const db = client.db(dbName).collection('users');
 
-    const db = client.db(dbName);
-
-    return { db, client };
+    return {db, client}
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import styles from '../styles/Register.module.scss';
+import styles from '../styles/register.module.scss';
+//import { CreateUser } from '../utils/database'
 
 export default function Register(){
 
@@ -10,15 +11,31 @@ export default function Register(){
     const [password, setPassword] = useState("");
     const [conPassword, setConPassword] = useState("");
 
-    const PostUser = () => {
-        var check = false;
-        if((name,email,age,phone,password,conPassword != "") && (password == conPassword)){
-            check = true;
-        }
-        
-        if(check == true){console.log('cadastrado')}
-    }
+    const PostUser = async () => {
+        var check = [];
+        if(name,email,age,phone,password,conPassword != "") check.push(true)
+        if(password == conPassword) check.push(true)
 
+        if(check[0],check[1] === true){
+            const data = {
+                "name": `${name}`,
+                "email": `${email}`,
+                "age": `${age}`,
+                "phone": `${phone}`,
+                "password": `${password}`
+            }
+            let init = {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }
+
+            await fetch("/api/user", init)
+                .then((response) => console.log(response))
+        }
+    }
     return(
         <div className={styles.container}>
 
