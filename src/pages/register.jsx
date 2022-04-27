@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link'
 import styles from '../styles/register.module.scss';
-//import { CreateUser } from '../utils/database'
 
 export default function Register(){
 
