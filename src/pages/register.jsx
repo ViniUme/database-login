@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link'
 import styles from '../styles/register.module.scss';
 //import { CreateUser } from '../utils/database'
 
@@ -48,7 +49,7 @@ export default function Register(){
                 <input type="text" autoComplete='none' placeholder='confirm password' className={styles.confirm_password} value={conPassword} onChange={ e => setConPassword(e.target.value)} />
             </form>
 
-            <button className={styles.button} onClick={() => PostUser()}>Register</button>
+            <Link href="/comfirm"><a><button className={styles.button} onClick={() => PostUser()}>Register</button></a></Link>
 
         </div>
     );
