@@ -22,7 +22,11 @@ export default function Index() {
     }
 
     await fetch("/api/login", init)
-      .then((response) => console.log(response));
+      .then((response) => {
+        if(response.status == 200){
+          setSession(true);
+        }
+      });
   }
 
   if(session === null){
