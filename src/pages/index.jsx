@@ -21,12 +21,17 @@ export default function Index() {
       body: JSON.stringify(data)
     }
 
-    await fetch("/api/login", init)
-      .then((response) => {
-        if(response.status === 200){
-          setSession(email);
-        }
-      });
+    const response = await fetch("/api/login", init)
+    if(response.status === 200){
+      const MakeSession = async () => {
+        const user = await response.json();
+        setSession(user)
+      }
+      MakeSession();
+    }
+    else{
+      return
+    }
   }
 
   if(session === null){
@@ -45,19 +50,12 @@ export default function Index() {
     )
   }
   else{
-
-    const GetData = async () => {
-      console.log(session)
-      const url = `/api/login?email=${session.email}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data)
-    }
-    GetData();
-
     return(
       <div>
-        <h1>logado</h1>
+        <h1>email: {session.email}</h1>
+        <h1>name: {session.name}</h1>
+        <h1>age: {session.age}</h1>
+        <h1>phone: {session.phone}</h1>
       </div>
     );
   }
