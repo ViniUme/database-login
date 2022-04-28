@@ -23,8 +23,8 @@ export default function Index() {
 
     await fetch("/api/login", init)
       .then((response) => {
-        if(response.status == 200){
-          setSession(true);
+        if(response.status === 200){
+          setSession(email);
         }
       });
   }
@@ -45,6 +45,16 @@ export default function Index() {
     )
   }
   else{
+
+    const GetData = async () => {
+      console.log(session)
+      const url = `/api/login?email=${session.email}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log(data)
+    }
+    GetData();
+
     return(
       <div>
         <h1>logado</h1>
