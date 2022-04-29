@@ -4,7 +4,7 @@ import Connect from "../../utils/database"
 export default async (req,res) => {
     if(req.method == "POST"){
         const {db} = await Connect();
-        const body = req.body
+        const body = await req.body
 
         const find = await db.findOne({email: body.email})
 
