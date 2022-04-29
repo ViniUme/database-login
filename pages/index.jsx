@@ -8,6 +8,8 @@ export default function Index() {
   const [password, setPassword] = useState("");
   const [session, setSession] = useState(null);
 
+  const [error, setError] = useState("");
+
   const MakeLogin = async () => {
     const data = {
       email: email,
@@ -30,7 +32,7 @@ export default function Index() {
       MakeSession();
     }
     else{
-      return
+      setError("Usuário não existe")
     }
   }
 
@@ -48,6 +50,8 @@ export default function Index() {
             <label className={styles.label} htmlFor="password">Senha</label>
           </div>
         </form>
+
+        <span className={styles.error}>{error}</span>
 
         <section className={styles.section_buttons}>
           <span className={styles.login} onClick={() => MakeLogin()}>Login</span>

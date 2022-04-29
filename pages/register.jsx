@@ -11,10 +11,12 @@ export default function Register(){
     const [password, setPassword] = useState("");
     const [conPassword, setConPassword] = useState("");
 
+    const [error, setError] = useState("");
+
     const PostUser = async () => {
         var check = [];
-        if(name,email,age,phone,password,conPassword != "") check.push(true)
-        if(password == conPassword) check.push(true)
+        if(name,email,age,phone,password,conPassword != "") check.push(true); else check.push(false)
+        if(password == conPassword) check.push(true); else check.push(false)
 
         if(check[0],check[1] === true){
             const data = {
@@ -33,8 +35,17 @@ export default function Register(){
             }
 
             await fetch("/api/user", init)
-                .then((response) => console.log(response))
+                .then((response) => {
+                    if(response.status === 400){
+                        setError("Usuário Já cadastrado");
+                    }
+                    else{
+                        window.location.replace("/comfirm")
+                    }
+                })
         }
+        else if(check[0] === false) setError("Preencha todos os campos");
+        if(check[1] === false) setError("A confirmação da senha está incorreta");
     }
     return(
         <div className={styles.container}>
@@ -52,7 +63,7 @@ export default function Register(){
                 </div>
 
                 <div className={styles.division}>
-                    <input type="text" autoComplete='none' placeholder=' ' id="age" className={styles.age} value={age} onChange={ e => setAge(e.target.value)} />
+                    <input type="number" autoComplete='none' placeholder=' ' id="age" className={styles.age} value={age} onChange={ e => setAge(e.target.value)} />
                     <label className={styles.label} htmlFor="age">Idade</label>
                 </div>
 
@@ -73,7 +84,9 @@ export default function Register(){
 
             </form>
 
-            <Link href="/comfirm"><a><button className={styles.button} onClick={() => PostUser()}>Cadastrar</button></a></Link>
+            <span className={styles.error}>{error}</span>
+
+            <button className={styles.button} onClick={() => PostUser()}>Cadastrar</button>
 
         </div>
     );

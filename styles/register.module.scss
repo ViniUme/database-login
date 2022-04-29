@@ -76,6 +76,11 @@ $colro2: #6F7FB0;
         }
     }
 
+    .error{
+        color: red;
+        font-size: 16px;
+    }
+
     .button{
         font-size: 18px;
         font-weight: 600;
@@ -84,7 +89,7 @@ $colro2: #6F7FB0;
         border: none;
         border-radius: 10px;
         padding: 10px 20px;
-        margin: 10px 0;
+        margin-bottom: 10px;
         margin-bottom: 40px;
         cursor: pointer;
         transition: 250ms ease-in-out;

@@ -5,8 +5,15 @@ export default async (req,res) => {
     if(req.method == "POST"){
         const {db} = await Connect();
         const body = req.body
-        const response = db.insertOne(body);
 
-        res.status(200).json(response);
+        const find = await db.findOne({email: body.email})
+
+        if(find.email == body.email){
+            res.status(400).json({message: "user already exist"})
+        }
+        else{
+            await db.insertOne(body);
+            res.status(200).json({message: "user sign on with success"});
+        }
     }
 }
