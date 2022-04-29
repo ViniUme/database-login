@@ -1,0 +1,109 @@
+$gray1: #747474;
+$gray2: #333333;
+$color1: #463C81;
+
+.container{
+    width: 30%;
+    height: min-content;
+    margin: auto;
+    position: absolute;
+    top: -10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+
+    .form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        
+        .division{
+            position: relative;
+            width: inherit;
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+
+            .email, .password{
+                width: 70%;
+                padding-left: 15px;
+                font-size: 18px;
+                outline: none;
+                border: none;
+                border-bottom: $gray1 3px solid;
+                border-radius: 20px;
+                transition: 150ms ease-in-out;
+            }
+            .email:hover, .password:hover{
+                border-bottom: $gray2 3px solid;
+            }
+            .email:focus, .password:focus{
+                border-bottom: $color1 3px solid;
+            }
+
+            .label{
+                position: absolute;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: calc(15% + 15px);
+                color: $gray1;
+                font-size: 18px;
+                cursor: text;
+                transition: 250ms ease-in-out;
+            }
+            .label::selection{
+                background-color: transparent;
+            }
+            .label:hover{
+                color: $gray2;
+            }
+            .email:focus ~ .label, .email:not(:placeholder-shown).email:not(:focus) ~ .label, .password:focus ~ .label, .password:not(:placeholder-shown).password:not(:focus) ~ .label{
+                top: -20px;
+                font-size: 14px;
+                font-weight: 600;
+                color: $color1;
+            }
+        }
+    }
+
+    .section_buttons{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 50px 0;
+    
+        .login, .register{
+            padding: 2px 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            background-color: $color1;
+            border-radius: 10px;
+        }
+    }
+}
+
+@media(max-width: 900px){
+    .container{
+        width: 70%;
+
+        .section_buttons{
+
+            .login, .register{
+                font-size: 18px;
+                margin: 0;
+            }
+        }
+    }
+}

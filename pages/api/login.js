@@ -14,9 +14,6 @@ export default async function handler (req,res){
             res.status(400).json({message: "algo de errado não esta certo"})
         }
     }
-    else if(req.method === "GET"){
-        res.status(200).json({macaco: "sim"})
-    }
     else{
         res.status(400).json({message: "wrong method"})
     }

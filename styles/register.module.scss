@@ -1,0 +1,105 @@
+$gray1: #747474;
+$gray2: #333333;
+$color1: #463C81;
+
+.container{
+    width: 30%;
+    height: min-content;
+    margin: auto;
+    position: absolute;
+    top: -10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+
+    .form{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30px;
+
+        .division{
+            position: relative;
+            margin: 15px 0;
+
+            .name, .email, .age, .phone, .password, .confirm_password{
+                width: 100%;
+                padding: 10px;
+                font-size: 18px;
+                outline: none;
+                border: transparent 3px solid;
+                border-bottom: $gray1 3px solid;
+                border-radius: 10px;
+                transition: 150ms ease-in-out;
+            }
+            .name:hover, .email:hover, .age:hover, .phone:hover, .password:hover, .confirm_password:hover{
+                border: $gray2 3px solid;
+            }
+            .name:focus, .email:focus, .age:focus, .phone:focus, .password:focus, .confirm_password:focus{
+                border: $color1 3px solid;
+            }
+
+            .label{
+                position: absolute;
+                margin: auto;
+                bottom: 13px;
+                left: 10px;
+                color: $gray1;
+                font-size: 18px;
+                font-family: 'Poppins', sans-serif;
+                cursor: text;
+                transition: 250ms ease-in-out;
+            }
+            .label::selection{
+                background-color: transparent;
+            }
+            .label:hover{
+                color: $gray2;
+            }
+            .name:focus ~ .label, .name:not(:placeholder-shown).name:not(:focus) ~ .label, .email:focus ~ .label, .email:not(:placeholder-shown).email:not(:focus) ~ .label, .phone:focus ~ .label, .phone:not(:placeholder-shown).phone:not(:focus) ~ .label, .age:focus ~ .label, .age:not(:placeholder-shown).age:not(:focus) ~ .label, .password:focus ~ .label, .password:not(:placeholder-shown).password:not(:focus) ~ .label, .confirm_password:focus ~ .label, .confirm_password:not(:placeholder-shown).confirm_password:not(:focus) ~ .label{
+                transform: translateY(-25px);
+                background-color: white;
+                padding: 5px;
+                font-size: 14px;
+                font-weight: 600;
+                color: $color1;
+            }
+        }
+    }
+
+    .button{
+        margin: 10px;
+    }
+}
+@media(max-width: 1050px){
+    .container{
+        width: 70%;
+
+        .form{
+
+            .division{
+                .name, .email, .age, .phone, .password, .confirm_password{
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 14px;
+                    outline: none;
+                    border: transparent 3px solid;
+                    border-bottom: $gray1 3px solid;
+                    border-radius: 10px;
+                    transition: 150ms ease-in-out;
+                }
+                
+                .label{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

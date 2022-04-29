@@ -38,12 +38,19 @@ export default function Index() {
     return (
       <div className={styles.container}>
         <form className={styles.form}>
-          <input type="email" placeholder="email" autoComplete='none' className={styles.emial} value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="text" placeholder="password" autoComplete='none' className={styles.password} value={password} onChange={(e) => setPassword(e.target.value)} />
+          <div className={styles.division}>
+            <input type="email" placeholder=" " autoComplete='none' id="email" className={styles.email} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <label className={styles.label} htmlFor="email">E-mail</label>
+          </div>
+
+          <div className={styles.division}>
+            <input type="text" placeholder=" " autoComplete='none' id="password" className={styles.password} value={password} onChange={(e) => setPassword(e.target.value)} />
+            <label className={styles.label} htmlFor="password">Password</label>
+          </div>
         </form>
 
         <section className={styles.section_buttons}>
-          <h2 className={styles.login} onClick={() => MakeLogin()}>Log In</h2>
+          <span className={styles.login} onClick={() => MakeLogin()}>Log In</span>
           <Link href="/register"><a className={styles.register}>Register</a></Link>
         </section>
       </div>
