@@ -41,12 +41,12 @@ export default function Index() {
       <div className={styles.container}>
         <form className={styles.form}>
           <div className={styles.division}>
-            <input type="email" placeholder=" " autoComplete='none' id="email" className={styles.email} value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" placeholder=" " autoComplete='off' id="email" className={styles.email} value={email} onChange={(e) => setEmail(e.target.value)} />
             <label className={styles.label} htmlFor="email">E-mail</label>
           </div>
 
           <div className={styles.division}>
-            <input type="text" placeholder=" " autoComplete='none' id="password" className={styles.password} value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type="text" placeholder=" " autoComplete='off' id="password" className={styles.password} value={password} onChange={(e) => setPassword(e.target.value)} />
             <label className={styles.label} htmlFor="password">Senha</label>
           </div>
         </form>
