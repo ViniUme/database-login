@@ -1,3 +1,6 @@
+$color1: #463C81;
+$colro2: #6F7FB0;
+
 .container{
     width: 30%;
     height: 400px;
@@ -13,8 +16,25 @@
     align-items: center;
     background-color: white;
     border-radius: 20px;
-    
-    .link_home{
+
+    .message, .link_home, .return{
         color: black;
+        font-weight: 600;
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    .link_home, .return{
+        color: black;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    .link_home{
+        color: $color1;
+        transition: 150ms ease-in-out;
+    }
+    .link_home:hover{
+        color: $colro2;
     }
 }

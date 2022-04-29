@@ -45,24 +45,30 @@ export default function Index() {
 
           <div className={styles.division}>
             <input type="text" placeholder=" " autoComplete='none' id="password" className={styles.password} value={password} onChange={(e) => setPassword(e.target.value)} />
-            <label className={styles.label} htmlFor="password">Password</label>
+            <label className={styles.label} htmlFor="password">Senha</label>
           </div>
         </form>
 
         <section className={styles.section_buttons}>
-          <span className={styles.login} onClick={() => MakeLogin()}>Log In</span>
-          <Link href="/register"><a className={styles.register}>Register</a></Link>
+          <span className={styles.login} onClick={() => MakeLogin()}>Login</span>
+          <Link href="/register"><a className={styles.register}>Cadastrar</a></Link>
         </section>
       </div>
     )
   }
   else{
     return(
-      <div>
-        <h1>email: {session.email}</h1>
-        <h1>name: {session.name}</h1>
-        <h1>age: {session.age}</h1>
-        <h1>phone: {session.phone}</h1>
+      <div className={styles.container_2}>
+
+        <div className={styles.section}>
+
+          <span className={styles.data}>E-mail: {session.email}</span>
+          <span className={styles.data}>Nome: {session.name}</span>
+          <span className={styles.data}>Idade: {session.age}</span>
+          <span className={styles.data}>Celular: {session.phone}</span>
+
+        </div>
+
       </div>
     );
   }

@@ -1,6 +1,7 @@
 $gray1: #747474;
 $gray2: #333333;
 $color1: #463C81;
+$colro2: #6F7FB0;
 
 .container{
     width: 30%;
@@ -24,6 +25,7 @@ $color1: #463C81;
         flex-direction: column;
         justify-content: center;
         margin: 30px;
+        margin-bottom: 10px;
 
         .division{
             position: relative;
@@ -75,7 +77,20 @@ $color1: #463C81;
     }
 
     .button{
-        margin: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: $color1;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 10px 0;
+        margin-bottom: 40px;
+        cursor: pointer;
+        transition: 250ms ease-in-out;
+    }
+    .button:hover{
+        background-color: $colro2;
     }
 }
 @media(max-width: 1050px){
