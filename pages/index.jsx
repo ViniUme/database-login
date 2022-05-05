@@ -1,12 +1,13 @@
 import styles from '../styles/index.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';
+import Loading from '../components/Loading'
 
 export default function Index() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [session, setSession] = useState(null);
+  const [session, setSession] = useState("none");
 
   const [error, setError] = useState("");
 
@@ -23,6 +24,7 @@ export default function Index() {
       body: JSON.stringify(data)
     }
 
+    setSession("loading");
     const response = await fetch("/api/login", init)
     if(response.status === 200){
       const MakeSession = async () => {
@@ -36,7 +38,7 @@ export default function Index() {
     }
   }
 
-  if(session === null){
+  if(session === "none"){
     return (
       <div className={styles.container}>
         <form className={styles.form}>
@@ -57,6 +59,13 @@ export default function Index() {
           <span className={styles.login} onClick={() => MakeLogin()}>Login</span>
           <Link href="/register"><a className={styles.register}>Cadastrar</a></Link>
         </section>
+      </div>
+    )
+  }
+  else if(session === "loading"){
+    return(
+      <div className={styles.loading}>
+        <Loading/>
       </div>
     )
   }

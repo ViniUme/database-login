@@ -1,0 +1,18 @@
+.load{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: 5px #54458C solid;
+    border-top: 5px #77B3D9 solid;
+    border-radius: 100%;
+    animation: reload 1.2s linear infinite;
+}
+
+@keyframes reload{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

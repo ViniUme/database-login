@@ -98,6 +98,15 @@ $colro2: #6F7FB0;
         background-color: $colro2;
     }
 }
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
 @media(max-width: 1050px){
     .container{
         width: 70%;
