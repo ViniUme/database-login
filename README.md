@@ -1,15 +1,17 @@
 <h1 align="center">Database Login</h1>
-<img alt="gif" src="https://github.com/ViniUme/assets/blob/master/login.gif?raw=true">
+<div align="center">
+   <img alt="gif" src="https://github.com/ViniUme/assets/blob/master/login.gif?raw=true">
+</div>
 
 <br>
 
 ## Translations
-- [Português Brasileiro]()
+- [Português Brasileiro](https://github.com/ViniUme/database-login/blob/master/translations/README-ptbr.md)
 
 <br>
 
 ### About
-I make this project to learn MongoDB, the project is small, having 3 windows and a loading window.
+I maked this project to learn MongoDB, the project is small, having 3 pages and a loading page.
 
 <br>
 
@@ -40,7 +42,7 @@ Have Node.js installed. With terminal opened in project folder, install the depe
         or
     yarn
     
-The project needs enviroments variables, you can create in root the file .env.local and use the envs name in .env.example. Use this env to put the link of database.
+The project needs enviroments variables, you can create in root, the file .env.local and use the env's name in .env.example. Use this env to put the link of database.
 
 <br>
 Then type this command in to run local server:
