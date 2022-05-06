@@ -1,5 +1,7 @@
 <h1 align="center">Database Login</h1>
-<img alt="gif" src="https://github.com/ViniUme/assets/blob/master/login.gif?raw=true">
+<div align="center">
+   <img alt="gif" src="https://github.com/ViniUme/assets/blob/master/login.gif?raw=true">
+</div>
 
 <br>
 
